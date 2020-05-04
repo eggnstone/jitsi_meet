@@ -1,8 +1,10 @@
 package com.gunschu.jitsi_meet
 
 import android.app.Activity
+import android.content.Intent
 import android.util.Log
 import androidx.annotation.NonNull
+import com.gunschu.jitsi_meet.SelfDestroyJitsiMeetActivity
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -15,6 +17,10 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
 import org.jitsi.meet.sdk.JitsiMeetUserInfo
 import java.net.URL
+
+private const val ACTION_JITSI_MEET_CONFERENCE = "org.jitsi.meet.CONFERENCE"
+private const val JITSI_MEET_CONFERENCE_OPTIONS = "JitsiMeetConferenceOptions"
+private const val SELF_DESTROY_JITSI_MEET_ACTIVITY__DURATION_IN_SECONDS = "SelfDestroyJitsiMeetActivity_DurationInSeconds"
 
 /** JitsiMeetPlugin */
 public class JitsiMeetPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware {

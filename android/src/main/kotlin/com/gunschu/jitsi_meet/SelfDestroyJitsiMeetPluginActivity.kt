@@ -1,4 +1,4 @@
-package android.src.main.kotlin.com.gunschu.jitsi_meet
+package com.gunschu.jitsi_meet
 
 import android.content.Context
 import android.content.Intent
@@ -10,8 +10,6 @@ import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
 import android.os.Bundle
 import android.os.Handler
 
-private const val ACTION_JITSI_MEET_CONFERENCE = "org.jitsi.meet.CONFERENCE"
-private const val JITSI_MEET_CONFERENCE_OPTIONS = "JitsiMeetConferenceOptions"
 private const val SELF_DESTROY_JITSI_MEET_ACTIVITY__DURATION_IN_SECONDS = "SelfDestroyJitsiMeetActivity_DurationInSeconds"
 
 public class SelfDestroyJitsiMeetActivity() : JitsiMeetActivity() {
