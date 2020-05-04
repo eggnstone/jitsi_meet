@@ -9,6 +9,13 @@
             android:supportsPictureInPicture="true"
             android:windowSoftInputMode="adjustResize">
         </activity>
-        <activity android:name="com.gunschu.jitsi_meet.SelfDestroyJitsiMeetActivity"></activity>
+        <activity
+            android:name=".SelfDestroyJitsiMeetActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
     </application>
 </manifest>
