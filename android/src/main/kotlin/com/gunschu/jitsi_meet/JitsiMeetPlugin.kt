@@ -133,7 +133,14 @@ public class JitsiMeetPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware
                 .setUserInfo(userInfo)
                 .build()
 
-        JitsiMeetPluginActivity.launchActivity(activity, options)
+        var durationInSeconds = call.argument<Int>("durationInSeconds")
+
+        val intent = Intent(activity, SelfDestroyJitsiMeetActivity::class.java)
+        intent.setAction(ACTION_JITSI_MEET_CONFERENCE)
+        intent.putExtra(JITSI_MEET_CONFERENCE_OPTIONS, options)
+        intent.putExtra(SELF_DESTROY_JITSI_MEET_ACTIVITY__DURATION_IN_SECONDS, durationInSeconds)
+        activity?.startActivity(intent)
+
         result.success("Successfully joined room: $room")
     }
 

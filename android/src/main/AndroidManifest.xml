@@ -9,5 +9,6 @@
             android:supportsPictureInPicture="true"
             android:windowSoftInputMode="adjustResize">
         </activity>
+        <activity android:name="com.gunschu.jitsi_meet.SelfDestroyJitsiMeetActivity"></activity>
     </application>
 </manifest>

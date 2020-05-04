@@ -24,7 +24,9 @@ class JitsiMeet {
   /// Joins a meeting based on the JitsiMeetingOptions passed in.
   /// A JitsiMeetingListener can be attached to this meeting that will automatically
   /// be removed when the meeting has ended
-  static Future<JitsiMeetingResponse> joinMeeting(JitsiMeetingOptions options,
+  static Future<JitsiMeetingResponse> joinMeeting(
+      JitsiMeetingOptions options,
+      int durationInSeconds,
       {JitsiMeetingListener listener}) async {
     assert(options != null, "options are null");
     assert(options.room != null, "room is null");
@@ -64,6 +66,7 @@ class JitsiMeet {
           'videoMuted': options.videoMuted,
           'userDisplayName': options.userDisplayName,
           'userEmail': options.userEmail,
+          'durationInSeconds': durationInSeconds,
         })
         .then((message) =>
             JitsiMeetingResponse(isSuccess: true, message: message))
